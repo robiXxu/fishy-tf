@@ -4,6 +4,7 @@ import sys
 import tensorflow as tf
 import pathlib
 import matplotlib.pyplot as plt
+import tensorflowjs as tfjs
 
 from tensorflow import keras
 from matplotlib import image
@@ -140,6 +141,9 @@ for img_path in list(test_dir.glob('*')):
     plt.axis("off")
     plt.savefig(f'{plt_path}/test/{img_path.name}')
 
+
+#model.save("./model")
+tfjs.converters.save_keras_model(model, "./jsmodel")
 
 sys.exit(0)
 
